@@ -34,6 +34,7 @@ namespace gestionDocteurs_web
             else
             {
                 lblMessage.Text = "Invalid Login";
+                lblMessage.Visible = true;
             }
         }
     }

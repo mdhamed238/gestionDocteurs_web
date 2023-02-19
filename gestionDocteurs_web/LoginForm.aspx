@@ -9,29 +9,28 @@
 </head>
 <body class="d-flex align-items-center bg-light">
   <div class="container mt-5" style="margin: auto;">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
+        <div class="card card-signin my-5 pd-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Connexion</h5>
+            <h5 class="card-title display-3 text-center">Connexion</h5>
             <form id="loginForm" class="form-signin" runat="server">
               <div class="form-label-group">
-                <asp:TextBox ID="txtUsername" runat="server" class="form-control" placeholder="Username" />
                 <label for="inputUsername">Username</label>
+                <asp:TextBox ID="txtUsername" runat="server" class="form-control" placeholder="Username" />
               </div>
 
               <div class="form-label-group">
-                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="form-control" placeholder="Password" />
                 <label for="inputPassword">Password</label>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="form-control" placeholder="Password" />
               </div>
 
               <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" class="btn btn-lg btn-primary btn-block text-uppercase" />
              </form>
-              <asp:Label ID="lblMessage" runat="server" Visible="false" class="alert alert-danger" />
+          </div>
+
+          <div class="mt-3">
+              <asp:Label ID="lblMessage" runat="server" Visible="false" class="alert alert-danger w-100" />
           </div>
         </div>
-      </div>
-    </div>
   </div>
 </body>
 </html>
