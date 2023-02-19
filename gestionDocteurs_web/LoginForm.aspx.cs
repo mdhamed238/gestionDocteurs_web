@@ -28,7 +28,10 @@ namespace gestionDocteurs_web
 
             if (result != null)
             {
-                Session["user"] = username;
+                HttpCookie cookie = new HttpCookie("user");
+                cookie.Value = username;
+                cookie.Expires = DateTime.Now.AddHours(1);
+                Response.SetCookie(cookie);
                 Response.Redirect("Default.aspx");
             }
             else

@@ -15,7 +15,7 @@ namespace gestionDocteurs_web
         HopitalDAL hopitalDAL;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"] == null)
+            if (Request.Cookies["user"] == null)
             {
                 Response.Redirect("~/LoginForm.aspx");
             }
