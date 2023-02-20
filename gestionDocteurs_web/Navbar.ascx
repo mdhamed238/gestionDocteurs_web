@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Navbar.ascx.cs" Inherits="gestionDocteurs_web.Navbar" %>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Acceuil</a>
+    <a class="navbar-brand" href="/">Acceuil</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,16 +16,8 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-dark font-weight-bold" href="#" runat="server" onclick="Logout();">Logout</a>
+                <a class="nav-link text-dark font-weight-bold" href="~/LoginForm.aspx" runat="server">Logout</a>
             </li>
         </ul>
     </div>
 </nav>
-
-
-<script>
-    function Logout() {
-        '<% Session.Abandon(); %>';
-        window.location.href = "LoginForm.aspx";
-    }
-</script>

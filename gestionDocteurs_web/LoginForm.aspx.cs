@@ -14,7 +14,7 @@ namespace gestionDocteurs_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Logout();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -28,10 +28,9 @@ namespace gestionDocteurs_web
 
             if (result != null)
             {
-                HttpCookie cookie = new HttpCookie("user");
-                cookie.Value = username;
-                cookie.Expires = DateTime.Now.AddHours(1);
-                Response.SetCookie(cookie);
+                HttpCookie userCookie = new HttpCookie("user", username);
+                userCookie.Expires = DateTime.Now.AddMinutes(10);
+                Response.SetCookie(userCookie);
                 Response.Redirect("Default.aspx");
             }
             else
@@ -39,6 +38,13 @@ namespace gestionDocteurs_web
                 lblMessage.Text = "Invalid Login";
                 lblMessage.Visible = true;
             }
+        }
+
+        private void Logout()
+        {
+            HttpCookie userCookie = new HttpCookie("user");
+            userCookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(userCookie);
         }
     }
 }

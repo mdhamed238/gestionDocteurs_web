@@ -19,7 +19,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Hopital</h5>
-            <form id="hopitalForm" class="form-hopital" runat="server">
+            <form id="hopitForm" class="form-hopital" runat="server">
               <div class="form-label-group">
                 <asp:TextBox ID="txtNom" runat="server" class="form-control" placeholder="Nom" />
                 <label for="txtNom">Nom</label>
